@@ -8,10 +8,13 @@ class VirtualMachine:
 
     def mem_populate(self):
         for cell in self.mem:
-            r = randint(0, 3)
-            if r != 0:
-                cell.set_flag(CellFlags.ORIGINAL)
-                cell.set_color(r)
+            if cell.get_flag() == CellFlags.DAMAGED:
+                r = randint(0, 6)
+                if r != 0:
+                    cell.set_flag(CellFlags.ORIGINAL)
+                    cell.set_color(r)
+                else:
+                    cell.set_flag(CellFlags.EMPTY)
 
     def mem_damage(self, prob):
         for cell in self.mem:

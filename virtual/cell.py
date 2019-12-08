@@ -6,7 +6,8 @@ class CellFlags(Enum):
     DAMAGED = 1
     ORIGINAL = 2
     MODIFIED = 3
-    
+
+
 class Cell:
     def __init__(self, flag, color, value):
         self.flag = flag
@@ -15,7 +16,7 @@ class Cell:
 
     def set_flag(self, flag):
         self.flag = flag
-    
+
     def set_color(self, color):
         self.color = color
 
